@@ -1,0 +1,21 @@
+#CAC 40 & Macro-Economic Dashboard
+
+An interactive data application to analyze the correlation between French CAC 40 stocks and global macroeconomic indicators (Oil, Gold, Interest Rates, etc.).
+
+## Features
+* **Data Collection:** Automated ETL pipeline using `yfinance` API (>200k rows).
+* **Data Management:** Cleaning, merging, and feature engineering (Volatility, Daily Returns) with `Pandas`.
+* **Visualization:** Interactive charts using `Plotly` and `Streamlit`.
+* **Text Mining:** Web scraping and WordCloud generation for financial news analysis.
+
+## Stack
+* Python 3.x
+* Streamlit
+* Pandas / NumPy
+* Plotly
+* BeautifulSoup4 / WordCloud
+
+##How to run
+1. Clone the repository
+2. Install dependencies: `pip install -r requirements.txt`
+3. Run the app: `streamlit run app.py`
