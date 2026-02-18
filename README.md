@@ -75,25 +75,15 @@ Pour assurer la performance et la précision financière, nous avons utilisé le
 
 ---
 
-## 💻 Installation & Démarrage
+## 🏗 Architecture & Modules du Code
 
-Clonez ce dépôt et lancez l'analyse en 3 commandes :
+Le projet est segmenté en 3 modules distincts respectant le principe de séparation des responsabilités.
 
-1.  **Installation des dépendances :**
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-2.  **Exécution du Pipeline ETL (Mise à jour des données) :**
-    *Lancez ce script pour récupérer les dernières données de marché.*
-    ```bash
-    python "projet data"
-    ```
-
-3.  **Lancement du Dashboard :**
-    ```bash
-    streamlit run app.py
-    ```
-
----
-*Projet universitaire réalisé dans le cadre du Master Data Analytics.*
+```mermaid
+graph LR
+A[Flux API Yahoo Finance] -->|Extract| B(data_management.ipynb)
+B -->|Transform| C{Pandas Engine}
+C -->|Nettoyage & Calculs| D[Dataframes Enrichis]
+D -->|Load| E[Application Streamlit]
+F[Web Articles] -->|Scraping| G[Module NLP]
+G -->|Processing| E
